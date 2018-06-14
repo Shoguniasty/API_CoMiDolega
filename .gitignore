@@ -12,3 +12,5 @@
 /bin/
 /composer.phar
 /.idea/
+.web-server-pid
+/var/
