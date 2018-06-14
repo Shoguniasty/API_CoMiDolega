@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Disease controller.
  *
- * @Route("diseases")
+ * @Route("admin/diseases/")
  */
 class DiseasesController extends Controller
 {

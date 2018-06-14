@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pollings list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Question</th>
+                <th>Answera</th>
+                <th>Answerb</th>
+                <th>Answerc</th>
+                <th>Answerd</th>
+                <th>Pointa</th>
+                <th>Pointb</th>
+                <th>Pointc</th>
+                <th>Pointd</th>
+                <th>Hintifa</th>
+                <th>Hintifb</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for polling in pollings %}
+            <tr>
+                <td><a href="{{ path('polling_show', { 'id': polling.id }) }}">{{ polling.id }}</a></td>
+                <td>{{ polling.question }}</td>
+                <td>{{ polling.answerA }}</td>
+                <td>{{ polling.answerB }}</td>
+                <td>{{ polling.answerC }}</td>
+                <td>{{ polling.answerD }}</td>
+                <td>{{ polling.pointA }}</td>
+                <td>{{ polling.pointB }}</td>
+                <td>{{ polling.pointC }}</td>
+                <td>{{ polling.pointD }}</td>
+                <td>{{ polling.hintIfA }}</td>
+                <td>{{ polling.hintIfB }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('polling_show', { 'id': polling.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('polling_edit', { 'id': polling.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('polling_new') }}">Create a new polling</a>
+        </li>
+    </ul>
+{% endblock %}
