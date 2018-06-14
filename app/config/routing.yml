@@ -1,3 +1,11 @@
+app_polling:
+    resource: "@AppBundle/Controller/PollingController.php"
+    type:     annotation
+
+app_disease_symptoms:
+    resource: "@AppBundle/Controller/DiseaseSymptomsController.php"
+    type:     annotation
+
 app_diseases:
     resource: "@AppBundle/Controller/DiseasesController.php"
     type:     annotation

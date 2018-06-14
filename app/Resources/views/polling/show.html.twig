@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Polling</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ polling.id }}</td>
+            </tr>
+            <tr>
+                <th>Question</th>
+                <td>{{ polling.question }}</td>
+            </tr>
+            <tr>
+                <th>Answera</th>
+                <td>{{ polling.answerA }}</td>
+            </tr>
+            <tr>
+                <th>Answerb</th>
+                <td>{{ polling.answerB }}</td>
+            </tr>
+            <tr>
+                <th>Answerc</th>
+                <td>{{ polling.answerC }}</td>
+            </tr>
+            <tr>
+                <th>Answerd</th>
+                <td>{{ polling.answerD }}</td>
+            </tr>
+            <tr>
+                <th>Pointa</th>
+                <td>{{ polling.pointA }}</td>
+            </tr>
+            <tr>
+                <th>Pointb</th>
+                <td>{{ polling.pointB }}</td>
+            </tr>
+            <tr>
+                <th>Pointc</th>
+                <td>{{ polling.pointC }}</td>
+            </tr>
+            <tr>
+                <th>Pointd</th>
+                <td>{{ polling.pointD }}</td>
+            </tr>
+            <tr>
+                <th>Hintifa</th>
+                <td>{{ polling.hintIfA }}</td>
+            </tr>
+            <tr>
+                <th>Hintifb</th>
+                <td>{{ polling.hintIfB }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('polling_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('polling_edit', { 'id': polling.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
