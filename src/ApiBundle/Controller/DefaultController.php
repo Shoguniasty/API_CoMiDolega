@@ -26,19 +26,22 @@ class DefaultController extends FOSRestController
             $json = $request->getContent();
             $json = json_decode($json);
 
-            return new JsonResponse($this->generateResult());
+            if ($json->user_id) {
+                return new JsonResponse($this->generateResult());
+            }else{
+                return new JsonResponse([
+                    'status' => false
+                ]);
+            }
         }
 
         if ($request->isMethod('get')) {
 
-            $arr['yourData'] = $this->generateYourData();
             $arr['symptoms'] = $this->generateSymptoms();
             $arr['polling'] = $this->generatePolling();
 
             return new JsonResponse($arr);
         }
-
-        return true;
     }
 
     private function checkSymptoms($json)
@@ -93,10 +96,10 @@ class DefaultController extends FOSRestController
                 [
                     'id' => $pool->getId(),
                     'question' => $pool->getQuestion(),
-                    'answerA' => $pool->getAnswerA(),
-                    'answerB' => $pool->getAnswerB(),
-                    'answerC' => $pool->getAnswerC(),
-                    'answerD' => $pool->getAnswerD(),
+                    'a' => $pool->getAnswerA(),
+                    'b' => $pool->getAnswerB(),
+                    'c' => $pool->getAnswerC(),
+                    'd' => $pool->getAnswerD(),
                 ];
         }
 
@@ -121,43 +124,21 @@ class DefaultController extends FOSRestController
         return $arr;
     }
 
-    private function generateYourData()
-    {
-        $arr = [
-            'firstName' => 'Your Name',
-            'weight' => 'kg',
-            'heigth' => 'cm',
-            'gender' => 'male/female',
-        ];
-
-        return $arr;
-    }
-
     private function generateResult()
     {
-        $result['disease'] = [
-            [
-                'diagnosis' => 'Grypa',
-                'desc' => 'Czym jest grypa? to ble ble ble ble ble'
+        return [
+            'status' => true,
+            'result' => 'Chora głowa, niestety brak możliwości wyleczenia ALE podsuwamy ci propozycję placówek w okolicy',
+            'hint' => 'Śpij więcej, uprawiaj sport itd',
+            'doctors' => [
+                [
+                    'name' => 'Doktor jakistam',
+                    'street' => 'Jakastam 15',
+                    'code' => '31-150',
+                    'city' => 'Krakow'
+                ]
             ]
         ];
-
-        $result['hints'] = [
-            [
-                'hint' => 'super super super',
-                'level' => 1,
-                'txt' => 'Łosz kurwa masakra z tobą!'
-            ]
-        ];
-
-        $result['summary'] = [
-            'score' => 65,
-            'healthState' => 'Dobry',
-            'bmi' => 27,
-            'bmiMessage' => 'costam costam'
-        ];
-
-        return $result;
     }
 }
 
