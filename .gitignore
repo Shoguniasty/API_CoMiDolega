@@ -9,7 +9,6 @@
 /build/
 /web/uploads/
 /vendor/
-/bin/
 /composer.phar
 /.idea/
 .web-server-pid
