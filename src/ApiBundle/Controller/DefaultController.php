@@ -40,7 +40,9 @@ class DefaultController extends FOSRestController
             $arr['symptoms'] = $this->generateSymptoms();
             $arr['polling'] = $this->generatePolling();
 
-            return new JsonResponse($arr);
+            $response = new JsonResponse($arr);
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
         }
     }
 
