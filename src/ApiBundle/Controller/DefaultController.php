@@ -27,11 +27,23 @@ class DefaultController extends FOSRestController
             $json = json_decode($json);
 
             if ($json->user_id) {
-                return new JsonResponse($this->generateResult());
+                $response = new JsonResponse($this->generateResult());
+                $response->headers->set('Content-Type', 'application/json');
+                $response->headers->set('Access-Control-Allow-Origin', '*');
+                $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
+                return $response;
+
             }else{
-                return new JsonResponse([
+                $response = new JsonResponse([
                     'status' => false
                 ]);
+
+                $response->headers->set('Content-Type', 'application/json');
+                $response->headers->set('Access-Control-Allow-Origin', '*');
+                $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
+                return $response;
             }
         }
 
