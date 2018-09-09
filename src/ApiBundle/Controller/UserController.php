@@ -18,7 +18,7 @@ class UserController extends FOSRestController
 {
     /**
      * @Route("register/")
-     * @Method({"POST"})
+     * @Method({"GET", "POST"})
      * @param Request $request the request object
      */
     public function registerAction(Request $request)
@@ -89,7 +89,7 @@ class UserController extends FOSRestController
 
     /**
      * @Route("login/")
-     * @Method({"POST"})
+     * @Method({"GET", "POST"})
      * @param Request $request the request object
      */
     public function loginAction(Request $request)
