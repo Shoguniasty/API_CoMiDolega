@@ -68,10 +68,10 @@ class UserController extends FOSRestController
 
                 $response->headers->set('Content-Type', 'application/json');
                 $response->headers->set('Access-Control-Allow-Origin', '*');
-                $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+                $response->headers->set('Access-Control-Allow-Headers', '*');
+                $response->headers->set('Access-Control-Allow-Methods', '*');
 
                 return $response;
-
             }
 
         }
@@ -82,7 +82,8 @@ class UserController extends FOSRestController
 
         $response->headers->set('Content-Type', 'application/json');
         $response->headers->set('Access-Control-Allow-Origin', '*');
-        $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+        $response->headers->set('Access-Control-Allow-Headers', '*');
+        $response->headers->set('Access-Control-Allow-Methods', '*');
 
         return $response;
     }
@@ -122,7 +123,8 @@ class UserController extends FOSRestController
 
                 $response->headers->set('Content-Type', 'application/json');
                 $response->headers->set('Access-Control-Allow-Origin', '*');
-                $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+                $response->headers->set('Access-Control-Allow-Headers', '*');
+                $response->headers->set('Access-Control-Allow-Methods', '*');
 
                 return $response;
 
@@ -133,7 +135,8 @@ class UserController extends FOSRestController
 
                 $response->headers->set('Content-Type', 'application/json');
                 $response->headers->set('Access-Control-Allow-Origin', '*');
-                $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+                $response->headers->set('Access-Control-Allow-Headers', '*');
+                $response->headers->set('Access-Control-Allow-Methods', '*');
 
                 return $response;
 
@@ -148,7 +151,8 @@ class UserController extends FOSRestController
 
             $response->headers->set('Content-Type', 'application/json');
             $response->headers->set('Access-Control-Allow-Origin', '*');
-            $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+            $response->headers->set('Access-Control-Allow-Headers', '*');
+            $response->headers->set('Access-Control-Allow-Methods', '*');
 
             return $response;
 
