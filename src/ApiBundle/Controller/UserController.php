@@ -108,7 +108,7 @@ class UserController extends FOSRestController
                 'email' => $email
             ]);
 
-            if ($pass === $user->getPass()) {
+            if ($pass == $user->getPass()) {
                 $response = new JsonResponse([
                     'status' => true,
                     'user' => [
@@ -141,7 +141,18 @@ class UserController extends FOSRestController
 
         }
 
-        return false;
+        if ($request->isMethod('get')) {
+            $response = new JsonResponse([
+                'status' => false
+            ]);
+
+            $response->headers->set('Content-Type', 'application/json');
+            $response->headers->set('Access-Control-Allow-Origin', '*');
+            $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
+            return $response;
+
+        }
     }
 
 }
