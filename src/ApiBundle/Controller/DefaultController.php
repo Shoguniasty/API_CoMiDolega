@@ -42,6 +42,9 @@ class DefaultController extends FOSRestController
 
             $response = new JsonResponse($arr);
             $response->headers->set('Content-Type', 'application/json');
+            $response->headers->set('Access-Control-Allow-Origin', 'http://comidolega.net');
+            $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
             return $response;
         }
     }
