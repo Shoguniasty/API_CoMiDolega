@@ -61,17 +61,30 @@ class UserController extends FOSRestController
                     ]
                 ]);
             }else{
-                return new JsonResponse([
+                $response = new JsonResponse([
                     'status' => false,
                     'hint' => 'User is exist!'
                 ]);
+
+                $response->headers->set('Content-Type', 'application/json');
+                $response->headers->set('Access-Control-Allow-Origin', '*');
+                $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
+                return $response;
+
             }
 
         }
 
-        return new JsonResponse([
+        $response = new JsonResponse([
             'status' => false
         ]);
+
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
+        return $response;
     }
 
     /**
@@ -96,7 +109,7 @@ class UserController extends FOSRestController
             ]);
 
             if ($pass === $user->getPass()) {
-                return new JsonResponse([
+                $response = new JsonResponse([
                     'status' => true,
                     'user' => [
                         'id' => $user->getId(),
@@ -106,10 +119,24 @@ class UserController extends FOSRestController
                         'height' => $user->getHeight()
                     ]
                 ]);
+
+                $response->headers->set('Content-Type', 'application/json');
+                $response->headers->set('Access-Control-Allow-Origin', '*');
+                $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
+                return $response;
+
             }else{
-                return new JsonResponse([
+                $response = new JsonResponse([
                     'status' => false
                 ]);
+
+                $response->headers->set('Content-Type', 'application/json');
+                $response->headers->set('Access-Control-Allow-Origin', '*');
+                $response->headers->set('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
+                return $response;
+
             }
 
         }
