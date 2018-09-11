@@ -22,6 +22,7 @@ class DefaultController extends FOSRestController
      */
     public function symptomsAction(Request $request)
     {
+        dump($request);
         if ($request->isMethod('post')) {
             $json = $request->getContent();
             $json = json_decode($json);
