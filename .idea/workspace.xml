@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fbb27daf-78ca-493d-83ad-b54933990388" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/UserController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state relative-caret-position="181">
+              <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
               <folding>
                 <element signature="e#40#71#0#PHP" expanded="true" />
               </folding>
@@ -242,12 +241,12 @@
       <workItem from="1532610443900" duration="608000" />
       <workItem from="1535805709498" duration="2452000" />
       <workItem from="1536078350451" duration="6231000" />
-      <workItem from="1536425886001" duration="4939000" />
+      <workItem from="1536425886001" duration="5931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40227000" />
+    <option name="totallyTimeSpent" value="41219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="2" width="1311" height="772" extended-state="6" />
@@ -649,8 +648,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        <state relative-caret-position="181">
+          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding>
             <element signature="e#40#71#0#PHP" expanded="true" />
           </folding>
