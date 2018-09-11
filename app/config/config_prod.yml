@@ -20,3 +20,8 @@ monolog:
         console:
             type: console
             process_psr_3_messages: false
+services:
+  app.cors_listeners:
+    class: AppBundle\Security\CorsListener
+    tags:
+      - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
