@@ -72,3 +72,8 @@ fos_user:
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
+services:
+  app.cors_listeners:
+    class: AppBundle\Security\CorsListener
+    tags:
+      - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
